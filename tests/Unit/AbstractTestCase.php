@@ -28,7 +28,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('paid', (string) $response->status());
+        $this->assertSame('paid', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -37,7 +37,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertFalse($response->success());
-        $this->assertSame('declined', (string) $response->status());
+        $this->assertSame('declined', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -46,7 +46,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('expired', (string) $response->status());
+        $this->assertSame('expired', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -59,7 +59,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertFalse($response->success());
-        $this->assertSame('pending', (string) $response->status());
+        $this->assertSame('pending', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -68,7 +68,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('pending', (string) $response->status());
+        $this->assertSame('pending', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -77,7 +77,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertFalse($response->success());
-        $this->assertSame('failed', (string) $response->status());
+        $this->assertSame('failed', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -86,7 +86,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('active', (string) $response->status());
+        $this->assertSame('active', $response->status());
         $this->assertSame('Transaction approved', $response->message());
     }
 
@@ -95,7 +95,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('authorized', (string) $response->status());
+        $this->assertSame('authorized', $response->status());
         $this->assertSame('Transaction approved', $response->message());
     }
 
@@ -104,7 +104,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('refunded', (string) $response->status());
+        $this->assertSame('refunded', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -113,7 +113,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('partially_refunded', (string) $response->status());
+        $this->assertSame('partially_refunded', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -122,7 +122,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertFalse($response->success());
-        $this->assertSame('canceled', (string) $response->status());
+        $this->assertSame('canceled', $response->status());
         $this->assertSame($message, $response->message());
     }
 
@@ -131,7 +131,7 @@ abstract class AbstractTestCase extends \PHPUnit_Framework_TestCase
         $response = $this->gateway->generateResponseFromRawResponse($payload);
 
         $this->assertTrue($response->success());
-        $this->assertSame('charged_back', (string) $response->status());
+        $this->assertSame('charged_back', $response->status());
         $this->assertSame('Charged back', $response->message());
     }
 
